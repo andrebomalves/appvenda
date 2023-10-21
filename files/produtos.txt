@@ -1,0 +1,4 @@
+1;descricao 1;true;11;4;4;C
+2;descricao 2;true;22;true;8;M
+3;descricao 3;false;33;6;6;C
+4;descricao 4;true;44;false;3;M
