@@ -1,5 +1,8 @@
 package br.edu.infnet.appvenda.model.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Computador extends Produto {
 
 	private int quantidadeNucleos;
@@ -25,6 +28,5 @@ public class Computador extends Produto {
 	public void setQuantidadePortasUsb(int quantidadePortasUsb) {
 		this.quantidadePortasUsb = quantidadePortasUsb;
 	}
-	
 	
 }

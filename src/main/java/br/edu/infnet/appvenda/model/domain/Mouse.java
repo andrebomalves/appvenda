@@ -1,5 +1,8 @@
 package br.edu.infnet.appvenda.model.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Mouse extends Produto {
 	
 	private boolean semFio;
@@ -24,7 +27,6 @@ public class Mouse extends Produto {
 
 	public void setQuantidadeDeBotoes(int quantidadeDeBotoes) {
 		this.quantidadeDeBotoes = quantidadeDeBotoes;
-	}
-	
+	}	
 	
 }

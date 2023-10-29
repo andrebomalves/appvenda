@@ -14,7 +14,7 @@ public class Produto {
 	private float preco;
 	private boolean estoque;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@ManyToOne(fetch = FetchType.EAGER, optional = true)
 	@JoinColumn(name = "idVendedor")
 	private Vendedor vendedor;
 	
