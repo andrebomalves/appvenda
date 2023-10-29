@@ -4,20 +4,23 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appvenda.model.domain.Mouse;
+import br.edu.infnet.appvenda.model.repository.MouseRepository;
 
 @Service
 public class MouseService {
-
-	private Map<Integer, Mouse> mapaMouse = new HashMap<Integer, Mouse>();
+	
+	@Autowired
+	private MouseRepository mouseRepository;
 
 	public void incluir(Mouse mouse) {
-		mapaMouse.put(mouse.getCodigo(), mouse);
+		mouseRepository.save(mouse);
 	}
 	
 	public Collection<Mouse> obterLista(){	
-		return mapaMouse.values();
+		return (Collection<Mouse>) mouseRepository.findAll();
 	}
 }

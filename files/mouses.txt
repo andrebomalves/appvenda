@@ -1,2 +1,2 @@
-2;descricao 2;true;22;true;8
-4;descricao 4;true;44;false;3
+2;mouse 2;true;22;true;8
+4;mouse 4;true;44;false;3

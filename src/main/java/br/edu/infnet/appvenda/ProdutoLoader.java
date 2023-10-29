@@ -20,22 +20,18 @@ import br.edu.infnet.appvenda.model.service.VendedorService;
 public class ProdutoLoader implements ApplicationRunner {
 	
 	@Autowired
-	private ProdutoService produtoService;
-	
+	private ProdutoService produtoService;	
 	@Autowired
 	private VendedorService vendedorService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		List<Vendedor> vendedores = (List<Vendedor>) vendedorService.obterLista();
-		
-		Vendedor vendedor = !vendedores.isEmpty() ? vendedores.get(0) : null ;
-		
+		List<Vendedor> vendedores = (List<Vendedor>) vendedorService.obterLista();		
+		Vendedor vendedor = !vendedores.isEmpty() ? vendedores.get(0) : null ;		
 		List<String> linhas = Util.RecuperarLinhasDoArquivo("files/produtos.txt");
 		
-		
-		
+
 		linhas.forEach( linha -> {
 			String[] campos = linha.split(";");
 			

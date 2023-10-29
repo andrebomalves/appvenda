@@ -9,7 +9,9 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appvenda.model.domain.Mouse;
+import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.MouseService;
+import br.edu.infnet.appvenda.model.service.VendedorService;
 
 @Component
 @Order(3)
@@ -17,9 +19,13 @@ public class MouseLoader implements ApplicationRunner {
 	
 	@Autowired
 	private MouseService mouseService;
-
+	@Autowired
+	private VendedorService vendedorService;
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		
+		List<Vendedor> vendedores = (List<Vendedor>) vendedorService.obterLista();		
+		Vendedor vendedor = !vendedores.isEmpty() ? vendedores.get(0) : null ;	
 		
 		List<String> linhas = Util.RecuperarLinhasDoArquivo("files/mouses.txt");
 		
@@ -33,6 +39,7 @@ public class MouseLoader implements ApplicationRunner {
 				mouse.setPreco(Float.valueOf(campos[3]));
 				mouse.setSemFio(Boolean.valueOf(campos[4]));
 				mouse.setQuantidadeDeBotoes(Integer.valueOf(campos[5]));
+				mouse.setVendedor(vendedor);
 				
 				mouseService.incluir(mouse);
 
