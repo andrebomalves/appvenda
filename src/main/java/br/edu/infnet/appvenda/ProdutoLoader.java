@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appvenda.model.domain.Computador;
@@ -13,6 +14,7 @@ import br.edu.infnet.appvenda.model.domain.Produto;
 import br.edu.infnet.appvenda.model.service.ProdutoService;
 
 @Component
+@Order(2)
 public class ProdutoLoader implements ApplicationRunner {
 	
 	@Autowired

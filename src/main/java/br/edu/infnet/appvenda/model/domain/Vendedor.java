@@ -2,10 +2,23 @@ package br.edu.infnet.appvenda.model.domain;
 
 import java.util.List;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "vendedores")
 public class Vendedor {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String nome;
 	private String cpf;
 	private String email;
+	
+	@OneToMany(
+            mappedBy = "vendedor",
+            fetch = FetchType.LAZY
+    )
 	private List<Produto> produtos;
 	
 	@Override

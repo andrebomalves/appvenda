@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appvenda.model.domain.Mouse;
 import br.edu.infnet.appvenda.model.service.MouseService;
 
 @Component
+@Order(3)
 public class MouseLoader implements ApplicationRunner {
 	
 	@Autowired

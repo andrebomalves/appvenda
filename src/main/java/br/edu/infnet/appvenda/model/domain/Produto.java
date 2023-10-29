@@ -1,11 +1,22 @@
 package br.edu.infnet.appvenda.model.domain;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "produtos")
 public class Produto {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String descricao;
 	private int codigo;
 	private float preco;
 	private boolean estoque;
+	
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "idVendedor")
+	private Vendedor vendedor;
 	
 	@Override
 	public String toString() {
@@ -35,5 +46,21 @@ public class Produto {
 	}
 	public void setEstoque(boolean estoque) {
 		this.estoque = estoque;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Vendedor getVendedor() {
+		return vendedor;
+	}
+
+	public void setVendedor(Vendedor vendedor) {
+		this.vendedor = vendedor;
 	}
 }

@@ -12,8 +12,8 @@ import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.VendedorService;
 
 @Component
-@Order(1)
-public class VendedorLoader implements ApplicationRunner {
+@Order(5)
+public class ProdutoVendedorLoader implements ApplicationRunner {
 	
 	@Autowired
 	private VendedorService vendedorService;
@@ -21,8 +21,23 @@ public class VendedorLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		List<String> linhas = Util.RecuperarLinhasDoArquivo("files/vendedores.txt");
+		var vendedores = vendedorService.obterListaProduto();
 		
+		vendedores.forEach(linha -> {
+			
+			System.out.println("Vendedor: " + linha.toString());
+			
+			linha.getProdutos().forEach(prod -> {
+				System.out.println("Produto: "+ prod.toString());
+			});
+			
+			System.out.println("***********************************");
+			
+			
+		});
+		
+		
+		/*
 		linhas.forEach( linha -> {
 			String[] campos = linha.split(";");
 			
@@ -34,6 +49,7 @@ public class VendedorLoader implements ApplicationRunner {
 			vendedorService.incluir(vendedor);
 			System.out.println("Vendedor: "+ vendedor);
 		});
+		*/
 	}
 	
 	
