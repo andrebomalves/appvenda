@@ -1,0 +1,2 @@
+1;computador 1;true;11;4;4
+3;computador 3;false;33;6;6

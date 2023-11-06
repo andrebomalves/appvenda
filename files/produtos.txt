@@ -1,0 +1,4 @@
+1;produto 1;true;11;4;4;C
+2;produto 2;true;22;true;8;M
+3;produto 3;false;33;6;6;C
+4;produto 4;true;44;false;3;M
