@@ -1,6 +1,7 @@
 package br.edu.infnet.appvenda.model.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "produtos")
@@ -11,7 +12,9 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String descricao;
+	@PositiveOrZero
 	private int codigo;
+	@Positive
 	private float preco;
 	private boolean estoque;
 	

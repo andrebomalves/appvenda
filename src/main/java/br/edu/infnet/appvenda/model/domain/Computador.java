@@ -1,11 +1,14 @@
 package br.edu.infnet.appvenda.model.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 public class Computador extends Produto {
 
+	@Positive
 	private int quantidadeNucleos;
+	@PositiveOrZero
 	private int quantidadePortasUsb;
 	
 	@Override

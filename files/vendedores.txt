@@ -1,4 +1,4 @@
-Andre 01;11111111111;andre01@infnet.com
-Andre 02;22222222222;andre02@infnet.com
-Andre 03;33333333333;andre03@infnet.com
-Andre 04;44444444444;andre04@infnet.com
+Andre 01;111.111.111-11;andre01@infnet.com;29060300
+Andre 02;222.222.222-22;andre02@infnet.com;29060300
+Andre 03;333.333.333-33;andre03@infnet.com;29060300
+Andre 04;444.444.444-44;andre04@infnet.com;29060300

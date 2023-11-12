@@ -21,4 +21,12 @@ public class ComputadorService {
 	public Collection<Computador> obterLista(){	
 		return (Collection<Computador>) computadorRepository.findAll();
 	}
+	
+	public long obterQtde() {
+		return computadorRepository.count();
+	}
+	
+	public void excluir(Integer id) {
+		computadorRepository.deleteById(id);
+	}
 }

@@ -1,11 +1,13 @@
 package br.edu.infnet.appvenda.model.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.PositiveOrZero;
 
 @Entity
 public class Mouse extends Produto {
 	
 	private boolean semFio;
+	@PositiveOrZero
 	private int quantidadeDeBotoes;
 	
 	@Override

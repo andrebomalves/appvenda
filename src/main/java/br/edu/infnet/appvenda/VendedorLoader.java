@@ -8,6 +8,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appvenda.model.domain.Endereco;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.VendedorService;
 
@@ -30,6 +31,7 @@ public class VendedorLoader implements ApplicationRunner {
 			vendedor.setCpf(campos[1]);
 			vendedor.setEmail(campos[2]);
 			vendedor.setNome(campos[0]);
+			vendedor.setEndereco(new Endereco(campos[3]));
 			
 			vendedorService.incluir(vendedor);
 			System.out.println("Vendedor: "+ vendedor);

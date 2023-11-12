@@ -23,4 +23,12 @@ public class MouseService {
 	public Collection<Mouse> obterLista(){	
 		return (Collection<Mouse>) mouseRepository.findAll();
 	}
+	
+	public long obterQtde() {
+		return mouseRepository.count();
+	}
+	
+	public void excluir(Integer id) {
+		mouseRepository.deleteById(id);
+	}
 }

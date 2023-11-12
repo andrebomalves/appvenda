@@ -23,4 +23,12 @@ public class ProdutoService {
 	public Collection<Produto> obterLista(){	
 		return (Collection<Produto>) produtoRepository.findAll();
 	}
+	
+	public long obterQtde() {
+		return produtoRepository.count();
+	}
+	
+	public void excluir(Integer id) {
+		produtoRepository.deleteById(id);
+	}
 }
