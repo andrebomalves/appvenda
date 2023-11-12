@@ -46,7 +46,11 @@ public class ProdutoLoader implements ApplicationRunner {
 				mouse.setQuantidadeDeBotoes(Integer.valueOf(campos[5]));
 				mouse.setVendedor(vendedor);
 				
-				produtoService.incluir(mouse);
+				try {
+					produtoService.incluir(mouse);					
+				} catch (Exception e) {
+					System.out.println("Erro ao incluir o mouse " + mouse);
+				}
 				
 				break;
 
@@ -60,7 +64,11 @@ public class ProdutoLoader implements ApplicationRunner {
 				computador.setQuantidadePortasUsb(Integer.valueOf(campos[5]));
 				computador.setVendedor(vendedor);
 				
-				produtoService.incluir(computador);
+				try {
+					produtoService.incluir(computador);					
+				} catch (Exception e) {
+					System.out.println("Erro ao incluir o computador " + computador );
+				}
 				
 				break;
 

@@ -41,7 +41,11 @@ public class MouseLoader implements ApplicationRunner {
 				mouse.setQuantidadeDeBotoes(Integer.valueOf(campos[5]));
 				mouse.setVendedor(vendedor);
 				
-				mouseService.incluir(mouse);
+				try {
+					mouseService.incluir(mouse);					
+				} catch (Exception e) {
+					System.out.println("Erro ao incluir o mouse " + mouse);
+				}
 
 				
 		});

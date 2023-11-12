@@ -1,15 +1,9 @@
 package br.edu.infnet.appvenda.controller;
 
-import java.awt.Component;
-
-import javax.swing.event.MenuDragMouseEvent;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
 import br.edu.infnet.appvenda.model.service.MouseService;
 import br.edu.infnet.appvenda.model.service.ComputadorService;
 import br.edu.infnet.appvenda.model.service.ProdutoService;
@@ -64,28 +58,5 @@ public class AppController {
 
 		return showHome(model);
 	}
-	
-	@GetMapping(value = "/produto/{id}/excluir")
-	public String excluirProduto(@PathVariable Integer id) {
 		
-		produtoService.excluir(id);
-		
-		return "redirect:/produto/lista";
-	}
-	
-	@GetMapping(value = "/mouse/{id}/excluir")
-	public String excluirMouse(@PathVariable Integer id) {
-		
-		mouseService.excluir(id);
-		
-		return "redirect:/mouse/lista";
-	}
-	
-	@GetMapping(value = "/computador/{id}/excluir")
-	public String excluirComputador(@PathVariable Integer id) {
-		
-		computadorService.excluir(id);
-		
-		return "redirect:/computador/lista";
-	}
 }

@@ -15,12 +15,12 @@ public class VendedorService {
 	
 	@Autowired
 	private VendedorRepository vendedorRepository;
-	@Autowired
-	private IEnderecoClient enderecoClient;
+	//@Autowired
+	//private IEnderecoClient enderecoClient;
 
 	public void incluir(Vendedor vendedor) {
-		Endereco endereco = enderecoClient.buscarCep(vendedor.getEndereco().getCep());	
-		vendedor.setEndereco(endereco);
+		//Endereco endereco = enderecoClient.buscarCep(vendedor.getEndereco().getCep());	
+		//vendedor.setEndereco(endereco);
 		vendedorRepository.save(vendedor);
 	}
 	

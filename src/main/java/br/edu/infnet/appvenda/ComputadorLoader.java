@@ -43,7 +43,11 @@ public class ComputadorLoader implements ApplicationRunner {
 			computador.setQuantidadePortasUsb(Integer.valueOf(campos[5]));
 			computador.setVendedor(vendedor);
 				
-			computadorService.incluir(computador);
+			try {
+				computadorService.incluir(computador);					
+			} catch (Exception e) {
+				System.out.println("Erro ao incluir o computador " + computador );
+			}
 
 				
 		});

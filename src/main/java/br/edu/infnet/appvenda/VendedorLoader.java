@@ -33,7 +33,12 @@ public class VendedorLoader implements ApplicationRunner {
 			vendedor.setNome(campos[0]);
 			vendedor.setEndereco(new Endereco(campos[3]));
 			
-			vendedorService.incluir(vendedor);
+			try {
+				vendedorService.incluir(vendedor);
+			} catch (Exception e) {
+				System.out.println("Erro ao incluir o vendedor " + vendedor );
+			}
+			
 			System.out.println("Vendedor: "+ vendedor);
 		});
 	}
