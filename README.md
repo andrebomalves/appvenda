@@ -34,7 +34,7 @@
 
 ###
 
-<p align="left">◽ Feature 01 - ✔<br>◽ Featura 02<br>◽ Feature 03<br>◽ Feature 04</p>
+<p align="left">◽ Feature 01 - ✔<br>◽ Featura 02 - ✔<br>◽ Feature 03 - ✔<br>◽ Feature 04</p>
 
 ###
 
