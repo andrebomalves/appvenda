@@ -48,7 +48,7 @@
 			${qtdeMouse}</span> <span class="badge rounded-pill bg-danger">Computadores
 			${qtdeComputador }</span>
 
-		<c:if test="${empty listagem}">
+		<c:if test="${not empty listagem}">
 		<h2>AppVenda</h2>
 		<p>Gestão de vendas de produtos:</p>
 		<table class="table">
@@ -90,7 +90,7 @@
 					</div>
 				</div>
 			</form>
-	
+			</c:if>
 			<c:if test="${not empty informacoes}">
 				<hr>
 				<table class="table">
@@ -108,7 +108,7 @@
 					</tbody>
 				</table>
 			</c:if>
-		</c:if>
+		
 		
 		<c:if test="${not empty objeto}">
 			<hr>

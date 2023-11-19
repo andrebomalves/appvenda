@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import br.edu.infnet.appvenda.model.service.MouseService;
+
 import br.edu.infnet.appvenda.model.service.ComputadorService;
+import br.edu.infnet.appvenda.model.service.InformacaoService;
+import br.edu.infnet.appvenda.model.service.MouseService;
 import br.edu.infnet.appvenda.model.service.ProdutoService;
 import br.edu.infnet.appvenda.model.service.VendedorService;
 
@@ -20,10 +22,13 @@ public class AppController {
 	private MouseService mouseService;
 	@Autowired
 	private ComputadorService computadorService;
+	@Autowired
+	private InformacaoService informacaoService;
 
 	@GetMapping(value = "/")
 	public String showHome(Model model) {
 		
+		model.addAttribute("informacoes", informacaoService.obterLista());
 		model.addAttribute("qtdeVendedor", vendedorService.obterQtde());
 		model.addAttribute("qtdeProduto", produtoService.obterQtde());
 		model.addAttribute("qtdeMouse", mouseService.obterQtde());
