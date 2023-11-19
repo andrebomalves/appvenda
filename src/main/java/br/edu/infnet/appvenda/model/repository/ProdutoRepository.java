@@ -6,4 +6,5 @@ import br.edu.infnet.appvenda.model.domain.Produto;
 
 public interface ProdutoRepository extends CrudRepository<Produto, Integer> {
 
+	Produto findByDescricao(String descricao);
 }

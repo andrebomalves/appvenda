@@ -29,4 +29,8 @@ public class ComputadorService {
 	public void excluir(Integer id) {
 		computadorRepository.deleteById(id);
 	}
+	
+	public Computador pesquisar(String descricao) {
+		return computadorRepository.findByDescricao(descricao);
+	}
 }

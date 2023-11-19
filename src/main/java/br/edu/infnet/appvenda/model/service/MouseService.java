@@ -28,4 +28,9 @@ public class MouseService {
 	public void excluir(Integer id) {
 		mouseRepository.deleteById(id);
 	}
+	
+	public Mouse pesquisar(String descricao) {
+		return mouseRepository.findByDescricao(descricao);
+	}
+
 }

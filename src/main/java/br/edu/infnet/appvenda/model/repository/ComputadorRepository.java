@@ -8,4 +8,5 @@ import br.edu.infnet.appvenda.model.domain.Computador;
 @Repository
 public interface ComputadorRepository extends CrudRepository<Computador, Integer> {
 
+	Computador findByDescricao(String Descricao);
 }

@@ -28,4 +28,8 @@ public class ProdutoService {
 	public void excluir(Integer id) {
 		produtoRepository.deleteById(id);
 	}
+	
+	public Produto pesquisar(String descricao){
+		return produtoRepository.findByDescricao(descricao);
+	}
 }
