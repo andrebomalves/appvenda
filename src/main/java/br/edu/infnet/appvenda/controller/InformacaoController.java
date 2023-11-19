@@ -2,6 +2,8 @@ package br.edu.infnet.appvenda.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.infnet.appvenda.model.domain.Informacao;
@@ -20,6 +22,13 @@ public class InformacaoController {
 		
 		System.out.println("RESULT: " + result);
 				
+		return "redirect:/";
+	}
+	
+	@GetMapping(value = "/informacao/{id}/excluir")
+	public String excluir(@PathVariable String id) {
+		informacaoService.excluir(id);
+						
 		return "redirect:/";
 	}
 }

@@ -21,4 +21,8 @@ public class InformacaoService {
 	public Informacao incluir(Informacao informacao) {
 		return informacaoClient.incluir(informacao);
 	}
+	
+	public void excluir(String id) {
+		informacaoClient.excluir(id);
+	}
 }

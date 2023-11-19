@@ -3,8 +3,7 @@ package br.edu.infnet.appvenda.clients;
 import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;  
 
 import br.edu.infnet.appvenda.model.domain.Informacao;
 
@@ -16,4 +15,7 @@ public interface IInformacaoClient {
 	
 	@PostMapping(value = "/incluir")
 	public Informacao incluir(Informacao informacao);
+	
+	@GetMapping(value = "/{id}/excluir")
+	public void excluir(@PathVariable String id);
 }

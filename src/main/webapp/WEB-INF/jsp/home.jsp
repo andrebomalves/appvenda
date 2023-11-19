@@ -5,15 +5,17 @@
 <html>
 <head>
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"	rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-	<meta charset="ISO-8859-1">
-	<title>AppVenda</title>
-	<style>
-	.material-symbols-outlined {
-		font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
-	}
-	</style>
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<meta charset="ISO-8859-1">
+<title>AppVenda</title>
+<style>
+.material-symbols-outlined {
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+}
+</style>
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -49,30 +51,28 @@
 			${qtdeComputador }</span>
 
 		<c:if test="${not empty listagem}">
-		<h2>AppVenda</h2>
-		<p>Gestão de vendas de produtos:</p>
-		<table class="table">
-			<thead class="table-dark">
-				<tr>
-					<th>${titulo}</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="item" items="${listagem}">
+			<h2>AppVenda</h2>
+			<p>Gestão de vendas de produtos:</p>
+			<table class="table">
+				<thead class="table-dark">
 					<tr>
-						<td>${item}</td>
-						<td>
-							<a href="/${rota}/${item.id}/excluir">
-								<span class="material-symbols-outlined">delete</span>
-							</a>
-						</td>
+						<th>${titulo}</th>
+						<th></th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+					<c:forEach var="item" items="${listagem}">
+						<tr>
+							<td>${item}</td>
+							<td><a href="/${rota}/${item.id}/excluir"> <span
+									class="material-symbols-outlined">delete</span>
+							</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
 		</c:if>
-		
+
 		<c:if test="${empty listagem}">
 			<hr>
 			<form action="/informacao/incluir" method="post">
@@ -90,26 +90,31 @@
 					</div>
 				</div>
 			</form>
-			</c:if>
-			<c:if test="${not empty informacoes}">
-				<hr>
-				<table class="table">
-					<thead class="table-dark">
+		</c:if>
+		<c:if test="${not empty informacoes}">
+			<hr>
+			<table class="table">
+				<thead class="table-dark">
+					<tr>
+						<th>Informações:</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="item" items="${informacoes}">
 						<tr>
-							<th>Informações:</th>
+							<td>${item}</td>
+							<td><a href="/informacao/${item.id}/excluir"> <span
+									class="material-symbols-outlined">delete</span>
+							</a></td>
 						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="item" items="${informacoes}">
-							<tr>
-								<td>${item}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</c:if>
-		
-		
+
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+
+
 		<c:if test="${not empty objeto}">
 			<hr>
 			<div class="alert alert-success">
