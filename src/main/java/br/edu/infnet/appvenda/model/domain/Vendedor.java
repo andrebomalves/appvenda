@@ -25,7 +25,9 @@ public class Vendedor {
 	
 	@OneToMany(
             mappedBy = "vendedor",
-            fetch = FetchType.LAZY
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.REMOVE,
+            orphanRemoval = true
     )
 	private List<Produto> produtos;
 	

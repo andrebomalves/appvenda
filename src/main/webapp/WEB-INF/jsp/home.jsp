@@ -30,6 +30,13 @@
 				<li class="nav-item"><a class="nav-link"
 					href="/computador/lista">Computadores</a></li>
 			</ul>
+			<c:if test="${not empty listagem}">
+				<form class="d-flex" action="/${rota}/pesquisar">
+					<input class="form-control me-2" type="text" name="campoBusca"
+						placeholder="Search">
+					<button class="btn btn-primary" type="submit">Search</button>
+				</form>
+			</c:if>
 		</div>
 	</nav>
 
@@ -41,6 +48,7 @@
 			${qtdeMouse}</span> <span class="badge rounded-pill bg-danger">Computadores
 			${qtdeComputador }</span>
 
+		<c:if test="${empty listagem}">
 		<h2>AppVenda</h2>
 		<p>Gestão de vendas de produtos:</p>
 		<table class="table">
@@ -63,6 +71,51 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		</c:if>
+		
+		<c:if test="${empty listagem}">
+			<hr>
+			<form action="/informacao/incluir" method="post">
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control"
+							placeholder="Entre com o campo" name="campo">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control"
+							placeholder="Entre com a descrição" name="descricao">
+					</div>
+					<div class="col">
+						<button class="btn btn-primary" type="submit">Cadastrar</button>
+					</div>
+				</div>
+			</form>
+	
+			<c:if test="${not empty informacoes}">
+				<hr>
+				<table class="table">
+					<thead class="table-dark">
+						<tr>
+							<th>Informações:</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="item" items="${informacoes}">
+							<tr>
+								<td>${item}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</c:if>
+		</c:if>
+		
+		<c:if test="${not empty objeto}">
+			<hr>
+			<div class="alert alert-success">
+				<strong>Sucesso!</strong> ${objeto}
+			</div>
+		</c:if>
 	</div>
 </body>
 </html>
