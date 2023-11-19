@@ -34,10 +34,14 @@
 
 ###
 
-<p align="left">◽ Feature 01 - ✔<br>◽ Featura 02 - ✔<br>◽ Feature 03 - ✔<br>◽ Feature 04</p>
+<p align="left">◽ Feature 01 - ✔<br>◽ Featura 02 - ✔<br>◽ Feature 03 - ✔<br>◽ Feature 04 - ✔</p>
 
 ###
 
 <h4 align="left">Requisitos</h4>
 <h5 align="left">Docker MySql</h5>
 docker run  --restart unless-stopped --name mysql-appvenda -e MYSQL_DATABASE=appvenda -e MYSQL_USER=appvenda -e MYSQL_PASSWORD=appvenda -e MYSQL_ROOT_PASSWORD=appvenda -d mysql:latest
+<br/>
+<h5 align="left">Vendas API</h5>
+Para executar a ultima feature é necessario rodar o projeto deste repositório: https://github.com/andrebomalves/vendasapi 
+Este respositório de vendasapi tem o mesmo requisito de Docker Mysql informado acima.
